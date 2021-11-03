@@ -1,0 +1,9 @@
+CREATE TABLE izba(adres_budynku INT, nazwa_izby INT, PRIMARY KEY(adres_budynku,nazwa_izby), metraz INT UNSIGNED, wlasciciel INT NOT NULL, FOREIGN KEY(wlasciciel) REFERENCES postac(id_postaci));
+
+ALTER TABLE izba ADD kolor_izby VARCHAR(40)AFTER metraz;
+
+CREATE TABLE przetwory (id_przetworu INT NOT NULL PRIMARY KEY , rok_produkcji DATE DEFAULT '1900-01-01', id_wykonawcy INT, FOREIGN KEY(id_wykonawcy) REFERENCES postac(id_postaci), zawartosc VARCHAR(50), dodatek VARCHAR(50) DEFAULT
+'papryczka chilli',id_konsumenta INT NOT NULL, FOREIGN KEY(id_konsumenta) REFERENCES postac(id_postaci));
+
+INSERT INTO przetwory VALUES ('1','1900-01-01 ','1','bigos','papryczka chilli','1');
+
