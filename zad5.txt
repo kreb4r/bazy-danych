@@ -26,11 +26,3 @@ update postac set statek='titanic' where id_postaci=1;
 
 alter table izba drop spizarnia;
 drop table izba;
-
-alter table postac modify id_postaci INT;
-
-alter table walizka drop foreign key walizka_ibfk_1;
-
-alter table przetwory drop foreign key przetwory_ibfk_1;
-
-alter table postac drop primary key;
