@@ -1,0 +1,9 @@
+# zadanie 2
+
+CREATE TABLE walizka (id_walizki int auto_increment primary key, pojemnosc int, kolor enum('rozowy','czerwony','teczowy','zolty'), id_wlasciciela int, foreign key (id_wlasciciela) references postac (id_postaci));
+ 
+ alter table walizka alter kolor set default 'rozowy';
+ 
+ INSERT INTO walizka VALUES(default, 100, null, 3);
+ 
+ INSERT INTO walizka VALUES(default, 100, null, 1);

@@ -1,5 +1,0 @@
-CREATE TABLE postac(id_postaci INT PRIMARY KEY AUTO_INCREMENT, nazwa VARCHAR(40),rodzaj ENUM('wiking','ptak','kobieta'),dara_urodzenia DATE, wiek INT);
-INSERT INTO postac VALUES(1, 'Bjorn','wiking','1999-03-03',25);
-INSERT INTO postac VALUES(2, 'Drozd','ptak','2019-03-03',2);
-INSERT INTO postac VALUES(3, 'Tesciowa','kobieta','1933-03-03',88)
-CREATE TABLE walizka(id_walizki INT PRIMARY KEY AUTO_INCREMENT, pojemnosc VARCHAR(45), kolor ENUM('rozowy','czerwony','zolty'), id_wlasciciela INT, FOREIGN KEY (id_wlasciciela) REFERENCES postac(id_postaci));
