@@ -9,20 +9,3 @@ INSERT INTO postac VALUES(null, 'Bjorn', 'wiking', '2137-10-17', 195);
 INSERT INTO postac VALUES(null, 'Tesciowa', 'kobieta', '1752-05-12', 355);
 
 UPDATE postac SET wiek=88 WHERE id_postaci='3';
-
-
-# zadanie 2
-
-CREATE TABLE walizka (id_walizki int auto_increment primary key, pojemnosc int, kolor enum('rozowy','czerwony','teczowy','zolty'), id_wlasciciela int, foreign key (id_wlasciciela) references postac (id_postaci));
- 
- alter table walizka alter kolor set default 'rozowy';
- 
- INSERT INTO walizka VALUES(default, 100, 'rozowy', 3);
- 
- INSERT INTO walizka VALUES(default, 100, 'rozowy', 1);
-
-# zadanie 3
-
-
-create table izba (adres_budynku varchar(50) not null, nazwa_izby varchar(50) not null, metraz int unsigned, wlasciciel int,primary key (adres_budynku, nazwa_izby), foreign key(wlasciciel) references postac(id_postaci));
-
