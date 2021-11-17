@@ -1,0 +1,27 @@
+Zad. 1
+
+select avg(waga) from kreatura where rodzaj='wiking';
+
+select rodzaj, avg(waga), count(rodzaj) from kreatura group by rodzaj;
+
+select rodzaj, avg(year(now()) - year(dataUr)) from kreatura group by rodzaj;
+
+Zad. 2
+
+select rodzaj, sum(waga) from zasob group by rodzaj;
+
+select nazwa, avg(waga) from zasob where ilosc >=4 group by nazwa having avg(waga) > 10;
+
+select rodzaj, count(distinct nazwa) from zasob group by rodzaj having min(ilosc) > 1;
+
+Zad. 3
+
+select nazwa, sum(ilosc) from kreatura, ekwipunek where kreatura.idKreatury=ekwipunek.idKreatury group by nazwa;
+
+select k.nazwa,z.nazwa from kreatura k INNER JOIN ekwipunek e ON k.idKreatury=e.idKreatury INNER JOIN zasob z ON e.idZasobu=z.idZasobu;
+
+#select k.nazwa, k.idKreatury, e.idKreatury from kreatura k LEFT JOIN ekwipunek e ON k.idKreatury=e.idKreatury where e.idKreatury is NULL;
+
+#select idKreatury from kreatura where idKreatury not in (select distinct idKreatury from ekwipunek where idKreatury is not NULL);
+
+
